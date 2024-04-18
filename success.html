@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="mb-0">Success!</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Your form has been submitted successfully.</p>
+                        <p>Here are the details you entered:</p>
+                        <ul>
+                            <li><strong>Roll Number:</strong> <span id="rollNumber"></span></li>
+                            <li><strong>Name:</strong> <span id="name"></span></li>
+                            <li><strong>Username:</strong> <span id="username"></span></li>
+                            <li><strong>Email:</strong> <span id="email"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Retrieve form data from session storage
+        var rollNumber = sessionStorage.getItem('rollNumber');
+        var name = sessionStorage.getItem('name');
+        var username = sessionStorage.getItem('username');
+        var email = sessionStorage.getItem('email');
+
+        // Display form data in HTML
+        document.getElementById('rollNumber').innerText = rollNumber;
+        document.getElementById('name').innerText = name;
+        document.getElementById('username').innerText = username;
+        document.getElementById('email').innerText = email;
+    </script>
+</body>
+</html>
